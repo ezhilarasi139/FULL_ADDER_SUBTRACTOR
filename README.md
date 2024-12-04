@@ -12,7 +12,7 @@ Hardware – PCs, Cyclone II , USB flasher
 
 Software – Quartus prime
 
-**Full Adder and Full Subtractor**
+
 
 **Full Adder**
 
@@ -36,7 +36,6 @@ Diff = A ⊕ B ⊕ Bin
 
 Borrow out = A'Bin + A'B + BBin
 
-**Truthtable**
 
 **Procedure**
 
@@ -44,12 +43,38 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+FULL ADDER
+
+module fa(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+
+FULL SUBTRACTOR
+
+module fs(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
+endmodule
+
+ Developed by:Ezhilarasi N RegisterNumber:24901074
+
 
 **RTL Schematic**
+![Screenshot (20)](https://github.com/user-attachments/assets/5047907a-5a0a-43ea-a8c2-1b0f37fddfe4)
+
+![Screenshot (22)](https://github.com/user-attachments/assets/a645119f-8f31-46e3-a76f-24a134c053c1)
+
+
 
 **Output Timing Waveform**
+![Screenshot (21)](https://github.com/user-attachments/assets/072442db-d87a-4ebf-b77e-3cb4274099f1)
+![Screenshot (23)](https://github.com/user-attachments/assets/0b293724-d86a-4fd7-9789-8c8cd632369f)
+
 
 **Result:**
 
